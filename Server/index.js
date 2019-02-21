@@ -10,6 +10,10 @@ app.listen(4000, () => {
 	console.log('Server Works !!! At port 4000');
 });
 
+app.get('/', (req, res) => {
+	res.status(200).json({message: 'hello'});
+});
+
 app.get('/download', (req,res) => {
 	var URL = req.query.URL;
 	res.header('Content-Disposition', 'attachment; filename="video.mp4"');
